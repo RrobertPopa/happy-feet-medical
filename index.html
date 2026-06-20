@@ -336,6 +336,7 @@ footer ul a:hover{color:var(--sage)}
     <nav class="nav-links" aria-label="Navigare principală">
       <a class="link" href="#despre">Cine suntem</a>
       <a class="link" href="#servicii">Servicii</a>
+      <a class="link" href="#tarife">Tarife</a>
       <a class="link" href="#proces">Cum decurge</a>
       <a class="link" href="#galerie">Galerie</a>
       <a class="link" href="#recenzii">Recenzii</a>
@@ -357,6 +358,7 @@ footer ul a:hover{color:var(--sage)}
 <nav class="m-menu" id="mMenu" aria-label="Meniu mobil">
   <a class="link" href="#despre">Cine suntem</a>
   <a class="link" href="#servicii">Servicii</a>
+  <a class="link" href="#tarife">Tarife</a>
   <a class="link" href="#proces">Cum decurge</a>
   <a class="link" href="#galerie">Galerie</a>
   <a class="link" href="#recenzii">Recenzii</a>
@@ -491,6 +493,126 @@ footer ul a:hover{color:var(--sage)}
         <h3>Pedichiură Spa</h3>
         <p>Îngrijire completă și relaxantă cu produse Kart, ca finalizare a unui protocol sau ca rutină de menținere.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PREȚURI ============ -->
+<style>
+  .price .price-groups{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+  .price-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;box-shadow:var(--sh)}
+  .price-card>h3{font-family:var(--serif);color:var(--green-d);font-size:1.35rem;margin-bottom:4px}
+  .price-card>.pc-sub{color:var(--muted);font-size:.88rem;margin-bottom:10px}
+  .price-item{display:flex;justify-content:space-between;gap:18px;padding:15px 0;border-top:1px solid var(--line)}
+  .price-card>.price-item:first-of-type{border-top:0}
+  .pi-left{min-width:0}
+  .pi-left h4{font-family:var(--sans);font-size:1rem;color:var(--ink);font-weight:700;line-height:1.32}
+  .pi-left p{color:var(--muted);font-size:.83rem;margin-top:4px;max-width:46ch}
+  .pi-badge{display:inline-block;margin-top:7px;font-size:.7rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--green-d);background:var(--mint);border:1px solid var(--sage);border-radius:100px;padding:2px 10px}
+  .pi-right{text-align:right;white-space:nowrap;flex:none}
+  .pi-right .amt{font-family:var(--serif);font-size:1.16rem;color:var(--green);font-weight:600;display:block}
+  .pi-right .dur{font-size:.77rem;color:var(--muted);margin-top:3px;display:block}
+  .price-cta{margin-top:42px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 18px;text-align:center}
+  .price-cta p{color:var(--muted);font-size:.94rem;max-width:640px;width:100%;margin-bottom:4px}
+  @media(max-width:820px){.price .price-groups{grid-template-columns:1fr}.price-card{padding:24px 20px}.price-item{gap:12px}}
+</style>
+<section class="sec price" id="tarife">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Tarife</span>
+      <h2>Prețuri pedichiură femei</h2>
+      <p>Listă de prețuri pentru manichiură și pedichiură. La unele proceduri costul variază în funcție de complexitate, evaluată la cabinet — consultanța pe baza unei poze trimise pe WhatsApp este gratuită.</p>
+    </div>
+    <div class="price-groups">
+
+      <div class="price-card reveal">
+        <h3>Tălpi, bătături &amp; veruci</h3>
+        <p class="pc-sub">Șlefuire, peeling și tratarea leziunilor plantare</p>
+        <div class="price-item">
+          <div class="pi-left"><h4>Tălpi — șlefuire cu pododisc</h4></div>
+          <div class="pi-right"><span class="amt">150 RON</span><span class="dur">30 min</span></div>
+        </div>
+        <div class="price-item">
+          <div class="pi-left"><h4>Peeling tălpi ADN / KART</h4><p>Prețul variază în funcție de complexitate.</p></div>
+          <div class="pi-right"><span class="amt">300–390 RON</span><span class="dur">30 min – 1 h</span></div>
+        </div>
+        <div class="price-item">
+          <div class="pi-left"><h4>Bătături tip cui / veruci (1–3 leziuni)</h4><p>Include curățare locală.</p></div>
+          <div class="pi-right"><span class="amt">150 RON</span><span class="dur">30 min</span></div>
+        </div>
+        <div class="price-item">
+          <div class="pi-left"><h4>Bătături tip cui / veruci (peste 3 leziuni)</h4><p>+100 RON dacă este necesar peeling (se achită separat).</p></div>
+          <div class="pi-right"><span class="amt">300 RON</span><span class="dur">30 min – 1 h</span></div>
+        </div>
+        <div class="price-item">
+          <div class="pi-left"><h4>Veruci multiple / tratament local intensiv</h4><p>Se calculează per unitate (bețișor); costul final depinde de numărul de unități folosite.</p></div>
+          <div class="pi-right"><span class="amt">150 RON / buc.</span><span class="dur">30 min – 1 h</span></div>
+        </div>
+      </div>
+
+      <div class="price-card reveal">
+        <h3>Pedichiură &amp; unghii</h3>
+        <p class="pc-sub">Întreținere, colțuri încarnate și unghii afectate</p>
+        <div class="price-item">
+          <div class="pi-left"><h4>Pedichiură simplă (întreținere)</h4><p>Fără tălpi. Pentru unghii tratate, fără probleme active.</p></div>
+          <div class="pi-right"><span class="amt">285 RON</span><span class="dur">1 h</span></div>
+        </div>
+        <div class="price-item">
+          <div class="pi-left"><h4>Pedichiură complexă (colțuri încarnate)</h4><p>Fără tălpi. Nu include sistem de corecție.</p></div>
+          <div class="pi-right"><span class="amt">300–330 RON</span><span class="dur">1 h</span></div>
+        </div>
+        <div class="price-item">
+          <div class="pi-left"><h4>Unghii onicodistrofice / micoză totală sau parțială</h4><p>În funcție de gradul de afectare.</p><span class="pi-badge">avans 50%</span></div>
+          <div class="pi-right"><span class="amt">360–390 RON</span><span class="dur">1 h</span></div>
+        </div>
+      </div>
+
+      <div class="price-card reveal">
+        <h3>Sistem de corecție (orteză cu fir de Titan)</h3>
+        <p class="pc-sub">Reorientarea unghiei încarnate, fără metode invazive</p>
+        <div class="price-item">
+          <div class="pi-left"><h4>Sistem de corecție — 1 unghie</h4><p>Prelucrăm o singură unghie (un fir de Titan).</p></div>
+          <div class="pi-right"><span class="amt">300 RON</span><span class="dur">30 min</span></div>
+        </div>
+        <div class="price-item">
+          <div class="pi-left"><h4>Sistem de corecție — 2 unghii</h4><p>Prelucrăm două unghii (două fire de Titan).</p></div>
+          <div class="pi-right"><span class="amt">600 RON</span><span class="dur">1 h</span></div>
+        </div>
+        <div class="price-item">
+          <div class="pi-left"><h4>Pachet: 1 sistem de corecție + igienizare completă unghii</h4><p>Fără tălpi.</p></div>
+          <div class="pi-right"><span class="amt">390 RON</span><span class="dur">30 min</span></div>
+        </div>
+        <div class="price-item">
+          <div class="pi-left"><h4>Pachet: 2 sisteme de corecție + igienizare completă unghii</h4><p>Fără tălpi.</p></div>
+          <div class="pi-right"><span class="amt">660 RON</span><span class="dur">1 h</span></div>
+        </div>
+      </div>
+
+      <div class="price-card reveal">
+        <h3>Pachete pododisc &amp; peeling ADN</h3>
+        <p class="pc-sub">Combinații de igienizare unghii și îngrijirea tălpilor</p>
+        <div class="price-item">
+          <div class="pi-left"><h4>Pachet unghii + pododisc</h4><p>Pentru unghii normale, fără probleme.</p><span class="pi-badge">avans 50%</span></div>
+          <div class="pi-right"><span class="amt">330 RON</span><span class="dur">1 h</span></div>
+        </div>
+        <div class="price-item">
+          <div class="pi-left"><h4>Pachet unghii micotice + pododisc</h4><span class="pi-badge">avans 50%</span></div>
+          <div class="pi-right"><span class="amt">360 RON</span><span class="dur">1 h</span></div>
+        </div>
+        <div class="price-item">
+          <div class="pi-left"><h4>Pachet Peeling ADN (KART) + unghii</h4><p>Include igienizarea unghiilor fără probleme.</p></div>
+          <div class="pi-right"><span class="amt">375 RON</span><span class="dur">1 h</span></div>
+        </div>
+        <div class="price-item">
+          <div class="pi-left"><h4>Pachet Peeling ADN (KART) + unghii micotice</h4><p>În funcție de gravitate. Consultanță gratuită pe baza fotografiilor trimise pe WhatsApp.</p><span class="pi-badge">avans 50%</span></div>
+          <div class="pi-right"><span class="amt">390–420 RON</span><span class="dur">1 h</span></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="price-cta reveal">
+      <p>Procedurile marcate <strong>„avans 50%"</strong> necesită un avans la programare. Nu ești sigur(ă) ce ți se potrivește? Trimite-ne o poză pe WhatsApp — consultanța inițială este gratuită.</p>
+      <a class="btn btn-primary" href="https://wa.me/40723240631?text=Bun%C4%83%2C%20a%C8%99%20vrea%20o%20programare%20la%20Happy%20Feet%20Medical." target="_blank" rel="noopener">Programează-te pe WhatsApp</a>
     </div>
   </div>
 </section>
