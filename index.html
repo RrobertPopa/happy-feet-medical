@@ -759,11 +759,8 @@ footer ul a:hover{color:var(--sage)}
 
     <div class="form-card reveal">
       <h3>Cere o programare</h3>
-      <p class="fhint">Completează datele și descrie pe scurt problema. Te contactăm pentru a stabili detaliile și costul orientativ.</p>
-      <!-- AGENT: setează cheia Web3Forms reală (access_key) înainte de live. -->
-      <form action="https://api.web3forms.com/submit" method="POST" id="bookForm">
-        <input type="hidden" name="access_key" value="DEMO-WEB3FORMS-ACCESS-KEY" />
-        <input type="hidden" name="subject" value="Cerere programare — Happy Feet Medical" />
+      <p class="fhint">Completează datele și apasă butonul — se deschide WhatsApp cu mesajul deja scris, gata de trimis. Îți răspundem cu un cost orientativ și o oră liberă.</p>
+      <form id="bookForm">
         <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
         <div class="field"><label for="nume">Nume și prenume</label><input id="nume" name="nume" type="text" required placeholder="Numele tău" /></div>
         <div class="field"><label for="tel">Telefon</label><input id="tel" name="telefon" type="tel" required placeholder="07xx xxx xxx" /></div>
@@ -778,7 +775,7 @@ footer ul a:hover{color:var(--sage)}
           </select>
         </div>
         <div class="field"><label for="msg">Descrie pe scurt problema</label><textarea id="msg" name="mesaj" placeholder="Ex: de câteva luni am o unghie care s-a îngroșat..."></textarea></div>
-        <button class="btn btn-primary" type="submit">Trimite cererea</button>
+        <button class="btn btn-wa" type="submit"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.9.9-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-5.8c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6 0-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.3z"/></svg>Trimite pe WhatsApp</button>
         <p class="fmsg" id="fmsg" hidden></p>
       </form>
     </div>
@@ -858,16 +855,18 @@ footer ul a:hover{color:var(--sage)}
   // year
   document.getElementById('yr').textContent=new Date().getFullYear();
 
-  // form (demo-safe; folosește Web3Forms doar dacă e setată o cheie reală)
-  var f=document.getElementById('bookForm'),fm=document.getElementById('fmsg');
+  // form -> WhatsApp (deschide WhatsApp cu mesajul precompletat din câmpuri)
+  var f=document.getElementById('bookForm'),fm=document.getElementById('fmsg'),WA='40723240631';
   f.addEventListener('submit',function(ev){
-    var key=f.querySelector('[name=access_key]').value;
-    if(key.indexOf('DEMO')===0){
-      ev.preventDefault();
-      fm.hidden=false;fm.style.color='#143E63';
-      fm.textContent='Mulțumim! (Demo) — în varianta live, mesajul ajunge direct pe email. Pentru programare rapidă, scrie-ne pe WhatsApp la 0723 240 631.';
-      f.reset();
-    }
+    ev.preventDefault();
+    if(f.botcheck&&f.botcheck.checked)return; // honeypot
+    var nume=(f.nume.value||'').trim(),tel=(f.telefon.value||'').trim(),serv=f.serviciu.value,msg=(f.mesaj.value||'').trim();
+    var text='Bună ziua! Aș dori o programare la Happy Feet Medical.\n\n'
+      +'Nume: '+nume+'\nTelefon: '+tel+'\nServiciu: '+serv
+      +(msg?'\nDetalii: '+msg:'');
+    window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(text),'_blank','noopener');
+    fm.hidden=false;fm.style.color='#143E63';
+    fm.textContent='Se deschide WhatsApp cu mesajul completat — mai apeși „Trimite" în WhatsApp. Dacă nu s-a deschis, scrie-ne direct la 0723 240 631.';
   });
 })();
 </script>
